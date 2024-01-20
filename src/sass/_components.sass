@@ -1,0 +1,206 @@
+// BlockServices
+.services
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  &__subtitle
+    @include font-style(italic, 1.1rem)
+    @include text-style(center, uppercase)
+    color: $color__yellow
+    margin: 0
+
+  &__title
+    @include font-style(italic, 2rem)
+    @include text-style(center, uppercase)
+    margin: 1rem 0
+
+
+  .services__text
+    margin: 1rem 0
+    font:
+      size: 1rem
+      weight: 300
+    text-align: center
+
+
+  &__list
+    list-style: none
+    padding-left: 0
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    gap: 1rem
+    width: 100%
+
+  &__service-card
+    flex: 1
+    display: grid
+    place-content: center
+    margin: 0
+    padding: 2rem
+    @include font-style(italic, 1.7rem)
+    font-weight: 600
+    @include text-style(center, uppercase)
+    color: $color__white
+    @include background-style(#151515, cover, center center, no-repeat)
+    transition: .2s
+
+    &:hover a
+      color: $color__yellow
+
+    &:hover
+      box-shadow:  5px 5px 30px #cecece, -5px -5px 30px $color__white
+    transform: scale(1.005)
+
+
+// Featured
+.featured
+  &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__title
+    text-transform: uppercase
+    @include font-style(italic, 2rem)
+
+  &__items
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    gap: 1rem
+    padding-left: 0
+
+  &__article
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: .5rem 0
+    border: 1px solid $color__grey
+    padding: 1rem
+    transition: .5s
+
+    &:hover
+      box-shadow:  5px 5px 30px #bebebe, -5px -5px 30px $color__white
+      transform: scale(1.005)
+
+  &__item
+    flex: 1
+    list-style: none
+    margin: 0
+
+    &__header
+      position: absolute
+      top: 0
+      right: 0
+      margin: 0
+      padding: .5rem 1rem
+      background-color: #151515
+      color: white
+      font-weight: 600
+      @include text-style(center, uppercase)
+      @include font-style(italic, 0.7rem)
+
+    &__image
+      width: 10vw
+
+    &__title
+      margin: 0
+      text-align: center
+      @include font-style(italic, 1rem)
+
+    &__colors-list
+      padding-left: 0
+      list-style: none
+      display: flex
+      justify-content: center
+      align-items: center
+      gap: .5rem
+
+    &__color
+      height: 22px
+      width: 22px
+      border: 1px solid $color__grey
+      border-radius: 50%
+
+    &__old-price
+      min-height: 1.5rem
+      color: #A1A1A1
+      text:
+        decoration: line-through
+        align: center
+      margin: 0
+      @include font-style(italic, .8rem)
+      font-weight: 300
+
+    &__price
+      margin: 0
+      text-align: center
+      @include font-style(italic, 1.2rem)
+
+
+.add-euro::after
+  content: "€"
+
+// Swiper
+.swiper
+    z-index: 5
+
+.swiper-wrapper
+    max-height: 590px
+
+.mySwiper-slide
+  height: auto !important
+  background:
+    size: cover
+    position: center center
+    repeat: no-repeat
+
+.mySlide-content
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: start
+  color: white
+  max-width: 40%
+  max-height: 590px
+
+  &__subtitle
+    text-transform: uppercase
+    @include font-style(italic, 1rem)
+    margin: 1rem 0
+
+  &__title
+    text-transform: uppercase
+    @include font-style(italic, 3rem)
+    margin: 2rem 0
+
+  &__text
+    font-size: .8rem
+    margin: 1rem 0
+
+.overlay
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.3)
+  z-index: -1
+
+.swiper-button-prev, .swiper-button-next
+  color: $color__yellow !important
+
+.swiper-pagination-bullet-active
+  background-color: $color__yellow !important
+
+
+@media (max-width: 600px)
+  .featured__item__image
+    width: 25vw
+    margin-top: 1rem

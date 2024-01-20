@@ -1,0 +1,24 @@
+@use "sass:meta"
+@use "sass:string"
+// Mixin para estilos de fuente
+@mixin font-style($style, $size)
+  font:
+    style: $style
+    size: $size
+
+
+// Mixin para estilos de texto
+@mixin text-style($align, $transform)
+  text:
+    align: $align
+    transform: $transform
+
+
+// Mixin para estilos de fondo
+@mixin background-style($color, $size, $position, $repeat)
+  background:
+    color: $color
+    size: $size
+    position: $position
+    repeat: $repeat
+
